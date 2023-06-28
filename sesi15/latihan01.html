@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>
+        Nama
+        <input type="text" id="txNAMA">
+    </div>
+    <div>
+        Email
+        <input type="email" id="txEMAIL">
+    </div>
+    <div>
+        Username
+        <input type="text" id="txUSERNAME">
+    </div>
+
+    <div id="tampildata"></div>
+
+    <script src="jquery-3.7.0.min.js"></script>
+    <script>
+        $(function () {
+            let urtarget = "https://webpro.ptov.my.id/api/curduser.php?aksi=get";
+            //const gdta = new XMLHttpRequest();
+            //gdta.open(urtarget);
+            //gdta.send();
+
+            //gdta.onload = function(){
+            //    let dta =JSON.parse(this.responseText);
+            //}
+
+            $.ajax({
+                url: urtarget,
+                success: function (dta, status, xhr) {
+                    console.log(dta);
+                    let tx = "<table><tr><td>#</td><td>nama</td><td>email</td><td>user</td></tr>";
+                    let nox =1;
+                    for(let i=0; i< dta.affected; i++){
+                    tx += '<tr>';
+                    tx += '<td>'+nox+'</td>';
+                    tx += '<td>'+dta.isi[i][0]+'+</td>';
+                    tx += '<td>'+dta.isi[i][1]+'</td>';
+                    tx += '<td>'+dta.isi[i][2]+'</td>';
+                    tx += '</tr>';
+                    nox++;  
+                    }
+                    tx += '</table>';
+                    console.log(tx);
+                    $("#tampildata").html(tx);
+
+                    //$("#txNAMA").val(dta.isi[2][0]);
+                    //$("#txEMAIL").val(dta.isi[2][1]);
+                    //$("#txUSERNAME").val(dta.isi[2][2]);
+                }
+            });
+
+
+        })
+
+    </script>
+</body>
+
+</html>

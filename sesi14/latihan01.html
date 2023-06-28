@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan JQuery01</title>
+</head>
+<body>
+
+    <h3>Judul</h3>
+    <div id="pesan1">Isi ID Pesan1</div>
+    <div class="pesan1">isi Class Pesan1</div>
+
+    <h1>Manik Nih Boss</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo odit fugit voluptates architecto reprehenderit incidunt voluptas, ab consequatur ducimus ex expedita ut neque eveniet id nihil dolore, velit eligendi similique!</p>
+    <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ullam fugiat explicabo facilis libero iure alias minima recusandae quas veritatis sunt quia, ratione impedit eaque maxime architecto? Accusamus, inventore eum?</span>
+    <div id="pesan2">
+        <div class="pesan2">
+            <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti asperiores facilis iusto, ipsa, atque est dicta rerum voluptatum doloremque quo quae nihil incidunt officiis libero provident porro quos hic. Exercitationem?</span>
+                <b>Anjayani</b>
+        </div>
+        <div class="pesan3"><b>Anjayani</b>
+        </div>
+        
+    </div>
+    <script src="jquery-3.7.0.min.js"></script>
+
+    <script>
+        //document.getElementById().innerhtml 
+        $(function(){
+            $("h3").html("Isi dari judul di ganti");
+            $("#pesan1").html("Pesan 1 di ubah");
+            $(".pesan1").html("Mengubah isi dari class Pesan 1 ");
+            $("h1").html("Mengubah isi dari h1");
+            $("p").html("Mengubah isi dari p");
+            $("span").html("Mengubah isi dari span");
+            $("#pesan2 .pesan2 b").html("manik yani");
+            $("#pesan2 .pesan3 b").html("manik anjayani");
+            
+        });
+
+
+    </script>
+</body>
+</html>
